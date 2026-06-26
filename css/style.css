@@ -1,0 +1,645 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   ПРИЖАТИЕ ФУТЕРА
+   ======================================== */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+/* ========================================
+   ШАПКА
+   ======================================== */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #34495e;
+}
+
+/* ========================================
+   ГЛАВНАЯ СТРАНИЦА
+   ======================================== */
+.hero {
+    text-align: center;
+    padding: 3rem;
+    background: #3498db;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   КНОПКИ
+   ======================================== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #1a5276;           /* Тёмно-синий */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: #154360;           /* Ещё темнее */
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #2874a6;           /* Средне-синий */
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    margin: 0.2rem;
+}
+
+.btn-small:hover {
+    background: #1a5276;
+}
+
+/* Кнопка удаления — оранжево-коричневая */
+.btn-small.delete {
+    background: #e67e22;
+}
+
+.btn-small.delete:hover {
+    background: #d35400;
+}
+
+/* Кнопка успеха/сохранения — зелёная */
+.btn-success {
+    background: #27ae60;
+}
+
+.btn-success:hover {
+    background: #229954;
+}
+
+/* ========================================
+   КАРТОЧКИ ДЛЯ ВСЕХ СТРАНИЦ
+   ======================================== */
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ КАРТОЧЕК */
+.service-card,
+.event-item,
+.service-item,
+.event-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover,
+.event-item:hover,
+.service-item:hover,
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ЗАГОЛОВКИ ВО ВСЕХ КАРТОЧКАХ */
+.service-card h3,
+.event-item h3,
+.service-item h3,
+.event-card h3 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* ПАРАГРАФЫ ВО ВСЕХ КАРТОЧКАХ */
+.service-card p,
+.event-item p,
+.service-item p,
+.event-card p {
+    margin: 0 0 0.8rem 0;
+    line-height: 1.6;
+}
+
+/* ПОСЛЕДНИЙ ПАРАГРАФ В КАРТОЧКАХ (цена, дата и т.д.) */
+.service-card .price,
+.service-item .price,
+.event-item p:last-child,
+.event-card p:last-of-type {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* ЦЕНА В КАРТОЧКАХ УСЛУГ */
+.service-card .price,
+.service-item .price {
+    font-size: 1.2rem;
+}
+
+/* ТЕГ STRONG В КАРТОЧКАХ */
+/* .event-card p strong,
+.event-item p strong {
+    color: #2c3e50;
+} */
+
+/* DETAILS В КАРТОЧКАХ УСЛУГ */
+.service-item details {
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.service-item details summary {
+    cursor: pointer;
+    color: #1a5276;
+    font-weight: bold;
+}
+
+.service-item details summary:hover {
+    color: #3498db;
+}
+
+.service-item details p {
+    margin: 0.5rem 0 0 0;  /* единый отступ */
+    padding: 0.5rem;
+    background: white;
+    border-radius: 4px;
+}
+
+/* ========================================
+   СЕТКИ ДЛЯ КАРТОЧЕК
+   ======================================== */
+
+/* Сетка для услуг на главной */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Сетка для мероприятий на главной */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Сетка для страницы услуг */
+.services-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* Сетка для страницы мероприятий */
+.events-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* ЗАГОЛОВКИ СЕКЦИЙ */
+.features h2,
+.events-section h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ========================================
+   ЦЕНА
+   ======================================== */
+.price {
+    font-size: 1.2rem;
+    color: #2980b9;                /* Тёмно-синий */
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* Акцентная цена (спецпредложение) — зелёная */
+.price.special {
+    color: #27ae60;
+}
+
+/* ========================================
+   ФОРМЫ
+   ======================================== */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Форма поиска */
+.search-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.search-form form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Переключатель типов услуг */
+.type-switcher {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.type-switcher .btn {
+    margin: 0;
+}
+
+.type-switcher .btn.active {
+    background: #3498db;
+}
+
+/* ========================================
+   СООБЩЕНИЯ
+   ======================================== */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid #f5c6cb;
+}
+
+/* ========================================
+   ПАГИНАЦИЯ
+   ======================================== */
+.pagination {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.pagination a:hover {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination span.active,
+.pagination a.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+/* ========================================
+   АДМИН-ПАНЕЛЬ
+   ======================================== */
+.admin-table {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table tr:hover {
+    background: #f5f5f5;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.actions .btn-small {
+    margin: 0 0.2rem;
+}
+
+/* === Стили ТОЛЬКО для таблиц услуг (рыбалка и комфорт) === */
+.services-table th:nth-child(1),  /* ID */
+.services-table td:nth-child(1) {
+    width: 60px;
+    text-align: center;
+}
+
+.services-table th:nth-child(2),  /* Название */
+.services-table td:nth-child(2) {
+    width: 200px;
+}
+
+.services-table th:nth-child(3),  /* Цена - самая широкая */
+.services-table td:nth-child(3) {
+    width: auto;
+    min-width: 400px;
+}
+
+.services-table th:nth-child(4),  /* Статус */
+.services-table td:nth-child(4) {
+    width: 100px;
+    text-align: center;
+}
+
+.services-table th:nth-child(5),  /* Действия */
+.services-table td:nth-child(5) {
+    width: 180px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ========================================
+   КАРТОЧКИ СТАТИСТИКИ
+   ======================================== */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    align-items: stretch;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-card h3 {
+    color: #2c3e50;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3498db;
+    margin: 0.5rem 0;
+    height: 4rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card p {
+    margin: 0.3rem 0;
+    color: #666;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card .btn-small {
+    margin-top: auto;
+    align-self: center;
+}
+
+/* Карточка с важной статистикой — жёлтая (не красная!) */
+.stat-card.highlight {
+    background: #f1c40f;           /* Жёлтый */
+    color: #2c3e50;
+}
+
+.stat-card.highlight .stat-number {
+    color: #2c3e50;
+}
+
+/* ========================================
+   ФИЛЬТРЫ
+   ======================================== */
+.filter-bar {
+    margin-bottom: 1rem;
+}
+
+.filter-bar .btn-small {
+    margin-right: 0.5rem;
+}
+
+.filter-bar .btn-small.active {
+    background: #2c3e50;
+}
+
+/* ========================================
+   ПОДВАЛ
+   ======================================== */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 40px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+   ======================================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li:last-child {
+        margin-left: 0;
+    }
+    
+    .hero {
+        padding: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        min-height: 150px;
+    }
+
+    /* Адаптивность для карточек */
+    .events-grid,
+    .services-page-grid,
+    .events-page-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-form form {
+        flex-direction: column;
+    }
+    
+    .search-form input[type="text"] {
+        width: 100%;
+    }
+    
+    .type-switcher {
+        flex-direction: column;
+    }
+    
+    .type-switcher .btn {
+        width: 100%;
+    }
+}

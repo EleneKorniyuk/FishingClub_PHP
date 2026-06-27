@@ -16,6 +16,7 @@
 
 ## Структура проекта
 
+```text
 fishing_club/
 ├── index.php      # Главная страница
 ├── login.php      # Вход в админку
@@ -48,6 +49,7 @@ fishing_club/
 ├── js/
 │ └── script.js      # JavaScript-функции
 └── fishingclub_db.sql      # Дамп базы данных
+```
 
 ---
 

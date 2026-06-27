@@ -7,7 +7,7 @@
 require '../config/database.php';
 require '../includes/functions.php';
 
-// Проверяем авторизацию (если не авторизован — отправит на login.php)
+// Проверяем авторизацию (если не авторизован - отправит на login.php)
 requireAuth();
 
 // ===== Собираем статистику =====
